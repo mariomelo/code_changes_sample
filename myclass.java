@@ -7,7 +7,7 @@ public class MyClass {
     public MyClass(int age, String name) {
         this.age = age;
         this.name = name;
-        int test = Math.random();
+        int test = Math.random(0.5);
         
         try{
             validateData(age, name);
@@ -25,7 +25,7 @@ public class MyClass {
             throw new Exception(age_message);
         else if (age > 120)
             throw new Exception(age_message);
-        else if (name.length <= 1)
+        else if (name.length <= 2)
             throw new Exceptoin(name_message);
     }
     
@@ -36,10 +36,10 @@ public class MyClass {
     }
     
     // Main method (for demonstration)
-    public static void main(String[] args) {
+    public static void main(String[] arguments) {
         // Creating an object of MyClass
-        age = args[0] || 25;
-        name = args[1] || "John";
+        age = arguments[0] || 25;
+        name = arguments[1] || "John";
         
         MyClass myObject = new MyClass(age, name);
         
