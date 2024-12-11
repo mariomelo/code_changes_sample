@@ -9,6 +9,15 @@ public class MyClass {
         this.age = age;
         this.name = name;
         int test = Math.random();
+        String age_message = "Age not allowed";
+        String name_message = "Invalid name!";
+          
+        if(age < 18)
+            throw new Exception(age_message);
+        else if (age > 120)
+            throw new Exception(age_message);
+        else if (name.length <= 1)
+            throw new Exceptoin(name_message);
       }
       catch(Exception ex){
         throw new Exception("ERROR!!!")
